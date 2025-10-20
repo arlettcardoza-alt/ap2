@@ -1,0 +1,215 @@
+/* style.css - Dulce Encanto (paleta pastel) */
+
+/* Colores */
+:root{
+  --rosa: #f7d6dd;
+  --rosa-osc: #f2b6c2;
+  --crema: #fff7ee;
+  --marron: #8b5e3c;
+  --acento: #ffd8c2;
+  --texto: #5b3d2b;
+  --blanco: #ffffff;
+  --sombra: rgba(139,94,60,0.08);
+  --container: 1100px;
+}
+
+/* Reset ligero */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family: "Helvetica Neue", Arial, sans-serif;color:var(--texto);background:var(--crema);line-height:1.5}
+.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
+
+/* HEADER (fixed) */
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+  border-bottom:1px solid rgba(139,94,60,0.06);
+  backdrop-filter: blur(4px);
+  z-index:1000;
+  box-shadow: 0 2px 8px var(--sombra);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.6rem 1rem;
+}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--marron)}
+.brand .logo{width:44px;height:44px;border-radius:8px;object-fit:cover;box-shadow: 0 2px 6px var(--sombra)}
+.main-nav a{margin:0 0.4rem;text-decoration:none;color:var(--texto);font-weight:600;padding:6px 8px;border-radius:6px}
+.main-nav a:hover{background:var(--rosa);color:var(--marron)}
+
+/* Social icons */
+.social-icons a{margin-left:0.4rem;color:var(--marron);text-decoration:none;font-size:1.05rem}
+.social-icons a:hover{color:var(--rosa-osc)}
+
+/* HERO */
+.hero{
+  height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-image: url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder');
+  background-size:cover;
+  background-position:center;
+  margin-top:72px; /* leave space for fixed header */
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background: linear-gradient(180deg, rgba(255,240,241,0.35), rgba(255,247,238,0.6));
+}
+.hero-overlay{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:2rem;
+  max-width:900px;
+  color:var(--marron);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+.hero h1{font-size:2.6rem;margin-bottom:0.5rem}
+.hero p{font-size:1.1rem;margin-bottom:1rem}
+.btn-primary{
+  display:inline-block;padding:0.6rem 1rem;border-radius:12px;background:var(--marron);color:var(--blanco);text-decoration:none;font-weight:700;
+  box-shadow:0 6px 18px rgba(139,94,60,0.12);
+}
+.btn-primary:hover{transform:translateY(-3px);transition:all .18s ease}
+
+/* INTRO / CARDS */
+.intro{padding:2.2rem 0 3rem}
+.cards{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+.card{background:var(--blanco);border-radius:12px;overflow:hidden;flex:1 1 300px;box-shadow:0 6px 18px var(--sombra);text-align:center;padding-bottom:1rem}
+.card img{width:100%;height:190px;object-fit:cover}
+.card h3{margin:0.8rem 0 0.3rem}
+.card p{padding:0 1rem;color:rgba(91,61,43,0.85)}
+
+/* BLOG */
+.posts{padding:2rem 0}
+.post{display:flex;gap:1rem;background:var(--blanco);margin-bottom:1rem;padding:1rem;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
+.post img{width:240px;height:160px;object-fit:cover;border-radius:8px}
+.post img.rounded{border-radius:50%;width:140px;height:140px}
+.post-content{flex:1}
+.post-content h2{margin-bottom:0.2rem}
+.post-content .meta{font-size:.9rem;color:rgba(91,61,43,0.6);margin-bottom:0.6rem}
+.post-content .float-text{float:left;width:40%;margin-right:1rem;margin-bottom:0.6rem}
+.read-more{display:inline-block;margin-top:0.6rem;color:var(--marron);text-decoration:none;font-weight:700}
+.read-more:hover{text-decoration:underline}
+
+/* GALLERY */
+/* MENÚ */
+.main-nav {
+  margin-top: 10px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #8b5e3c;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+.main-nav a:hover,
+.main-nav .activo {
+  color: #d86b86;
+}
+
+/* CONTENIDO */
+.container {
+  padding: 120px 20px 60px;
+  text-align: center;
+}
+
+/* GALERÍA CON FLEXBOX */
+.galeria-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.galeria-flex figure {
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Imágenes en blanco y negro con transición a color */
+.galeria-flex img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: grayscale(80%) contrast(0.9);
+  transition: filter 0.4s ease;
+}
+
+/* Hover: cambio de filtro (de blanco y negro a color) */
+.galeria-flex img:hover {
+  filter: grayscale(0%) brightness(1.05);
+}
+
+/* TEXTO BAJO LAS FOTOS */
+figcaption {
+  font-style: italic;
+  margin: 8px 0 10px;
+  color: #5a4633;
+}
+
+/* REDES SOCIALES */
+.redes {
+  margin-top: 40px;
+}
+
+.redes a {
+  color: #8b5e3c;
+  margin: 0 8px;
+  font-size: 1.4rem;
+}
+
+.redes a:hover {
+  color: #d86b86;
+}
+
+/* PIE DE PÁGINA */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  color: #8b5e3c;
+  font-size: 0.9rem;
+  background-color: #fdf2f3;
+  margin-top: 60px;
+}
+
+
+/* VIDEOS */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1rem 0}
+.embed-responsive{position:relative;padding-top:56.25%;overflow:hidden;border-radius:10px;background:var(--blanco);box-shadow:0 6px 18px var(--sombra)}
+.embed-responsive iframe,
+.embed-responsive video{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+/* FOOTER */
+.site-footer{margin-top:2rem;padding:1.2rem 0;background:transparent;border-top:1px dashed rgba(139,94,60,0.06)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+
+/* Responsive */
+@media(max-width:900px){
+  .main-nav{display:none}
+  .cards{flex-direction:column}
+  .post{flex-direction:column}
+  .post img{width:100%;height:auto}
+  .post-content .float-text{float:none;width:100%;margin:0 0 .6rem 0}
+  .thumb{flex:1 1 calc(50% - 12px)}
+}
+@media(max-width:520px){
+  .hero h1{font-size:1.8rem}
+  .hero{height:46vh}
+  .thumb{flex:1 1 100%}
+  .footer-inner{flex-direction:column;text-align:center}
+}
